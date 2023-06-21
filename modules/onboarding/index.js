@@ -1,3 +1,4 @@
+import { Pressable } from "react-native";
 import React from "react";
 import { View, Image, Text, StyleSheet } from "react-native";
 import PropTypes from "prop-types"; // @ts-ignore
@@ -44,9 +45,9 @@ const Onboarding = ({
 
   const handleDone = () => {};
 
-  return <View style={[mainContainerStyle, styles.mnqUFRCF]}>
+  return <Pressable><View style={[mainContainerStyle, styles.mnqUFRCF]}>
       {slidesData ? <AppIntroSlider renderItem={renderItem} data={slidesData} onDone={onDone || handleDone} onSkip={onSkip || ""} onSlideChange={onSlideChange || ""} showSkipButton={showSkipButton} bottomButton={bottomButton} dotStyle={dotStyle} activeDotStyle={activeDotStyle} skipLabel={skipLabel} doneLabel={doneLabel} nextLabel={nextLabel} prevLabel={prevLabel} showPrevButton={showPrevButton} showNextButton={showNextButton} showDoneButton={showDoneButton} renderNextButton={renderNextButton} renderPrevButton={renderPrevButton} renderDoneButton={renderDoneButton} renderSkipButton={renderSkipButton} /> : <Text style={styles.warText}>No data found!</Text>}
-    </View>;
+    </View></Pressable>;
 };
 
 const styles = StyleSheet.create({
